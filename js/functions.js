@@ -82,10 +82,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 clearError('celular-error');
             }
 
+            const generos = document.querySelector('input[name="generos"]:checked');
+            if (!generos) {
+                showError('generos-error', 'Debe seleccionar al menos un género.');
+                isValid = false;
+            } else {
+                clearError('generos-error');
+            }
+
             if (isValid) {
                 alert('¡Formulario de registro validado correctamente!');
             }
         });
     }
-
 });
