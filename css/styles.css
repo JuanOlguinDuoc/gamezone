@@ -1,52 +1,41 @@
-/* Documentación de CSS */
-
-/* Selector universal: aplica el tipo de fuente 'Courier New' a todos los elementos */
+/* Selector universal: aplica el tipo de fuente 'Courier New' a todos los elementos. */
 * {
     font-family: 'Courier New', Courier, monospace;
 } 
 
-/* Estilos para el cuerpo de la página (body) */
+/* Estilos para el cuerpo de la página. */
 body {
-    background-color: black; 
+    background-color: black;
     position: relative;
     z-index: 0;
-}
-
-/* Pseudo-elemento para el fondo de imagen con opacidad */
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-image: url('../images/fondo.png');
-    background-repeat: no-repeat;
+    
+    /* Propiedades para el carrusel de fondo */
     background-size: cover; 
-    opacity: 0.3; /* Opacidad para el efecto visual */
-    z-index: -1;
-    pointer-events: none; /* Permite clics a través del pseudo-elemento */
+    background-position: center;
+    background-repeat: no-repeat; 
+    transition: background-image 2s ease-in-out;
 }
 
-/* Contenedor principal para centrar los formularios */
+
+/* Contenedor principal para centrar los formularios. */
 .contenedor { 
     display: flex; 
-    justify-content: center; /* Centrado horizontal */
-    align-items: center; /* Centrado vertical */
-    min-height: 100vh; /* Ocupa la altura completa de la ventana */
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
 } 
 
-/* Estilos para los formularios de registro y login */
+/* Estilos para los formularios de registro y login. */
 .register, .login { 
     color: aquamarine;
     background: linear-gradient(180deg, rgba(2, 0, 36, 0.4) 0%, rgba(9, 9, 121, 0.4) 35%, rgba(0, 212, 255, 0.4) 100%);
-    display: none; /* Oculta los formularios por defecto */
+    display: none; 
     border: 1px solid aqua; 
     border-radius: 5px; 
     padding: 1rem; 
 } 
 
-/* Estilos para los inputs y botones dentro de los formularios */
+/* Estilos para los campos de entrada y botones. */
 .register input, .login input, 
 .register button, .login button { 
     margin-bottom: 10px; 
@@ -57,28 +46,28 @@ body::before {
     border-radius: 5px; 
 } 
 
-/* Estilos específicos para los botones de radio */
+/* Estilos específicos para los botones de radio. */
 .register input[type="radio"] {
     width: auto;
     margin: 0;
 }
 
-/* Estilos para los títulos dentro de los formularios */
+/* Estilos para los títulos de los formularios. */
 .register h2, .register h3, .login h2 {
     text-align: center;
     color: aqua;
 }
 
-/* Estilos para el encabezado de la página */
+/* Estilos para el encabezado de la página. */
 header {
     display: grid;
-    grid-template-columns: 2fr 1fr; /* Divide el encabezado en dos columnas */
+    grid-template-columns: 2fr 1fr; 
     align-items: center;
-    background: linear-gradient(181deg, rgba(2, 0, 36, 0.19) 0%, rgba(9, 9, 121, 0.19) 35%, rgba(0, 212, 255, 0.18) 100%);
+    background: linear-gradient(181deg, rgba(2, 0, 36, 0.35) 0%, rgba(9, 9, 121, 0.35) 35%, rgba(0, 212, 255, 0.35) 100%);
     padding: 0.5rem;
 }
 
-/* Estilos para el título dentro del encabezado */
+/* Estilos para el título dentro del encabezado. */
 .titulo {
     text-align: right;
     color: white;
@@ -86,42 +75,42 @@ header {
     justify-self: right; 
 }
 
-/* Estilos para el contenedor de botones en el encabezado */
+/* Estilos para el contenedor de botones del encabezado. */
 .botones {
-    justify-self: end; /* Alinea los botones a la derecha */
+    justify-self: end; 
     display: flex;
     gap: 10px;
 }
 
-/* Estilos para el formulario de login */
+/* Estilos para el formulario de login. */
 .login form { 
     width: 100%; 
     max-width: 400px; 
     margin: 0 auto; 
 }
 
-/* Estilos para el formulario de registro (usando CSS Grid) */
+/* Estilos para el formulario de registro, usando CSS Grid para el layout. */
 .register form {
     display: grid;
-    grid-template-columns: 2fr 1fr; /* Divide el formulario en dos columnas */
+    grid-template-columns: 2fr 1fr; 
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
     gap: 20px;
 }
 
-/* Estilos para las secciones de datos y géneros */
+/* Estilos para las secciones de datos y géneros. */
 .datos, .generos {
     display: flex;
     flex-direction: column;
 }
 
-/* Estilos para el título de la sección de géneros */
+/* Estilos para el título de la sección de géneros. */
 .generos h3 {
     margin-bottom: 20px;
 }
 
-/* Estilos para el contenedor de los botones de radio */
+/* Contenedor de los botones de radio. */
 .radio-container {
     display: flex;
     flex-direction: column;
@@ -129,7 +118,7 @@ header {
     flex-grow: 1; 
 }
 
-/* Estilos para los botones de enviar */
+/* Estilos para los botones de enviar. */
 .register button, .login button {
     background: linear-gradient(90deg, #3F2B96 0%, #A8C0FF 100%);
     color: white;
@@ -138,14 +127,14 @@ header {
     font-size: 1.2rem;
 }
 
-/* Estilos para el botón de registro que ocupa ambas columnas en el grid */
+/* Estilos para el botón de registro que ocupa ambas columnas del grid. */
 .register form button.grid-button {
-    grid-column: 1 / -1; /* Ocupa desde la primera hasta la última columna */
+    grid-column: 1 / -1; 
     margin-top: 10px;
     height: auto; 
 }
 
-/* Estilos para el contenedor de cada botón de radio y su etiqueta */
+/* Estilos para cada botón de radio y su etiqueta. */
 .form-check {
     display: flex; 
     align-items: center; 
