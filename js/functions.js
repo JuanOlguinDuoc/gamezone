@@ -47,6 +47,41 @@ document.addEventListener('DOMContentLoaded', () => {
                 clearError('fullname-error');
             }
 
+            const email = document.getElementById("email").value.trim();
+            const emailRegex = /^[^\s@]+@duoc\.cl$/;
+            if (!emailRegex.test(email)) {
+                showError('email-error', 'Debe ser un correo válido con el dominio @duoc.cl.');
+                isValid = false;
+            } else {
+                clearError('email-error');
+            }
+
+            const password = document.getElementById("password").value;
+            const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{10,}$/;
+            if (!passwordRegex.test(password)) {
+                showError('password-error', 'La contraseña debe tener al menos 10 caracteres, incluyendo mayúsculas, minúsculas, un número y un carácter especial.');
+                isValid = false;
+            } else {
+                clearError('password-error');
+            }
+
+            const confirmPassword = document.getElementById("confirm-password").value;
+            if (password !== confirmPassword) {
+                showError('confirm-password-error', 'Las contraseñas no coinciden.');
+                isValid = false;
+            } else {
+                clearError('confirm-password-error');
+            }
+
+            const celular = document.getElementById("celular").value.trim();
+            const celularRegex = /^\d{9}$/;
+            if (celular && !celularRegex.test(celular)) {
+                showError('celular-error', 'El número de teléfono debe contener exactamente 9 dígitos.');
+                isValid = false;
+            } else {
+                clearError('celular-error');
+            }
+
             if (isValid) {
                 alert('¡Formulario de registro validado correctamente!');
             }
