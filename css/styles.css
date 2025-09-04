@@ -49,7 +49,7 @@ body::before {
     border-radius: 5px; 
 } 
 
-.register input[type="checkbox"] {
+.register input[type="radio"] {
     width: auto;
     margin: 0;
 }
@@ -104,7 +104,7 @@ header {
     margin-bottom: 20px;
 }
 
-.checkbox-container {
+.radio-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between; 
