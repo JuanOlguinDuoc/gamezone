@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             const password = document.getElementById("password").value;
-            const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{10,}$/;
+            const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]).{10,}$/;
             if (!passwordRegex.test(password)) {
                 showError('password-error', 'La contraseña debe tener al menos 10 caracteres, incluyendo mayúsculas, minúsculas, un número y un carácter especial.');
                 isValid = false;
@@ -103,10 +103,11 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const username = document.getElementById("login-username").value;
             const password = document.getElementById("login-password").value;
+            const loginError = document.getElementById("login-error");
 
             if (username === 'admin' && password === 'admin') {
                 alert('Inicio de sesión exitoso!');
-                document.getElementById("login-error").textContent = '';
+                loginError.textContent = '';
             } else {
                 showError('login-error', 'Nombre de usuario o contraseña incorrectos.');
             }
