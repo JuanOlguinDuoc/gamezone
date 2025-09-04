@@ -95,4 +95,21 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    const loginForm = document.getElementById("login-form");
+
+    if (loginForm) {
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const username = document.getElementById("login-username").value;
+            const password = document.getElementById("login-password").value;
+
+            if (username === 'admin' && password === 'admin') {
+                alert('Inicio de sesión exitoso!');
+                document.getElementById("login-error").textContent = '';
+            } else {
+                showError('login-error', 'Nombre de usuario o contraseña incorrectos.');
+            }
+        });
+    }
 });
