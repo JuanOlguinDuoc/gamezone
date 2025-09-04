@@ -108,7 +108,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Si todas las validaciones son exitosas, muestra una alerta y permite el envío (en un entorno real)
             if (isValid) {
-                alert('¡Formulario de registro validado correctamente!');
+               // alert('¡Formulario de registro validado correctamente!');
+
+                const formulario = document.getElementById("register-form");
+                const formData = new FormData(formulario);
+                const url =  new URLSearchParams(formData);
+                const queryString = url.toString();
+                alert(queryString);
             }
         });
     }
